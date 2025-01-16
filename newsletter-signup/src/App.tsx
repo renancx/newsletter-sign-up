@@ -3,6 +3,26 @@ import './App.css'
 function App() {
 	return (
 		<>
+			Stay updated!
+
+			Join 60,000+ product managers receiving monthly updates on:
+
+			Product discovery and building what matters
+			Measuring to ensure updates are a success
+			And much more!
+
+			Email address
+			email@company.com
+
+			Subscribe to monthly newsletter
+
+
+			Thanks for subscribing!
+
+			A confirmation email has been sent to ash@loremcompany.com. 
+			Please open it and click the button inside to confirm your subscription.
+
+			Dismiss message
 		</>
 	)
 }
