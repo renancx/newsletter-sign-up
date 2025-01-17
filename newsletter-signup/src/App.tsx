@@ -9,30 +9,32 @@ function App() {
 
 	return (
 		<>
-			<h1>Stay updated!</h1>
+			<div className="container">
+				<h1 className="title">Stay updated!</h1>
 
-			<p>Join 60,000+ product managers receiving monthly updates on:</p>
+				<p className="">Join 60,000+ product managers receiving monthly updates on:</p>
 
-			<ul>
-				<li><img src={iconList}/> Product discovery and building what matters</li>
-				<li><img src={iconList}/> Measuring to ensure updates are a success</li>
-				<li><img src={iconList}/> And much more!</li>
-			</ul>
+				<ul className="">
+					<li className=""><img src={iconList}/> Product discovery and building what matters</li>
+					<li className=""><img src={iconList}/> Measuring to ensure updates are a success</li>
+					<li className=""><img src={iconList}/> And much more!</li>
+				</ul>
 
-			<div>
-				<label htmlFor="email">Email address</label>
-				<input type="email" id="email" name="email" />
+				<div className="">
+					<label className="" htmlFor="email">Email address</label>
+					<input className="" type="email" id="email" name="email" />
 
-				<button onClick={() => setVisible(true)}>Subscribe to monthly newsletter</button>
+					<button className="" onClick={() => setVisible(true)}>Subscribe to monthly newsletter</button>
+				</div>
 			</div>
 
-			<Dialog header={<img src={iconSucess} alt="Success" />} visible={visible} style={{ width: '50vw' }} onHide={() => setVisible(false)}>
-				<h1>Thanks for subscribing!</h1>
-				<p>
+			<Dialog header={<img src={iconSucess} alt="Success" />} dismissableMask={true} visible={visible} style={{ width: '50vw' }} onHide={() => setVisible(false)}>
+				<h1 className="title">Thanks for subscribing!</h1>
+				<p className="">
 					A confirmation email has been sent to ash@loremcompany.com. 
 					Please open it and click the button inside to confirm your subscription.
 				</p>
-				<button onClick={() => setVisible(false)}>Dismiss message</button>
+				<button className="" onClick={() => setVisible(false)}>Dismiss message</button>
 			</Dialog>					
 		</>
 	)
