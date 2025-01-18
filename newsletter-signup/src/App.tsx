@@ -6,7 +6,22 @@ import iconList from '../assets/images/icon-list.svg';
 import illustration from '../assets/images/illustration-sign-up-desktop.svg';
 
 function App() {
+	const [email, setEmail] = useState('');
 	const [visible, setVisible] = useState(false);
+
+	const handleEmail = () => {
+		if (!email) {
+			alert('Please enter your email address');
+			return;
+		}
+
+		if (!email.includes('@')) {
+			alert('Please enter a valid email address');
+			return;
+		}
+
+		setVisible(true);
+	}
 
 	return (
 		<>
@@ -23,19 +38,23 @@ function App() {
 					</ul>
 
 					<div className="form">
-						<label className="email-title" htmlFor="email">Email address</label>
-						<input placeholder="email@company.com" className="email-input" type="email" id="email" name="email" />
+						<div className="email-container">
+							<label className="email-title" htmlFor="email">Email address</label>
+							<p className="email-title error">Valid email required</p>
+						</div>
 
-						<button className="btn" onClick={() => setVisible(true)}>Subscribe to monthly newsletter</button>
+						<input placeholder="email@company.com" className="email-input" type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+
+						<button className="btn" onClick={() => handleEmail()}>Subscribe to monthly newsletter</button>
 					</div>
 				</div>
 				<img className="img" src={illustration} />
 			</div>
 
-			<Dialog className="dialog" header={<img src={iconSucess} alt="Success" />} dismissableMask={true} visible={visible} onHide={() => setVisible(false)}>
+			<Dialog className="dialog" maskStyle={{backgroundColor: 'rgba(0, 0, 0, 0.5)'}} header={<img src={iconSucess} alt="Success" />} dismissableMask={true} visible={visible} onHide={() => setVisible(false)}>
 				<h1 className="title">Thanks for subscribing!</h1>
 				<p className="text">
-					A confirmation email has been sent to ash@loremcompany.com. 
+					A confirmation email has been sent to {email}. 
 					Please open it and click the button inside to confirm your subscription.
 				</p>
 				<button className="btn" onClick={() => setVisible(false)}>Dismiss message</button>

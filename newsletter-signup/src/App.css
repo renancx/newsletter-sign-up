@@ -74,8 +74,8 @@ html {
 .dialog {
 	background-color: #ffffff;
 	width: 400px;
-
-
+	padding: 40px;
+	border-radius: 12px;
 }
 
 .btn {
@@ -84,7 +84,7 @@ html {
 	color: #ffffff;
 	padding: 10px 20px;
 	border-radius: 5px;
-
+	width: 100%;
 }
 
 .btn:hover {
@@ -105,11 +105,23 @@ html {
 }
 
 .email-title {
-	font-family: 'roboto-bold';
 	font-size: 12px;
-	margin-bottom: 4px;
 }
 
 .text {
 	font-size: 15px;
+}
+
+.email-container {
+	font-family: 'roboto-bold';
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 4px;
+	font-size: 12px;
+	justify-content: space-between;
+}
+
+.error {
+	color: red;
+	margin: 0;
 }
