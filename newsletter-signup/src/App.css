@@ -73,5 +73,43 @@ html {
 
 .dialog {
 	background-color: #ffffff;
-	width: 200px;
+	width: 400px;
+
+
+}
+
+.btn {
+	border: 0;
+	background-color: #232742;
+	color: #ffffff;
+	padding: 10px 20px;
+	border-radius: 5px;
+
+}
+
+.btn:hover {
+	background: linear-gradient(90deg, #ff5478 0%, #ff683d 100%);
+	cursor: pointer;
+}
+
+.email-input {
+	border: 1px solid #c5c5c5;
+	padding: 10px 20px;
+	border-radius: 5px;
+	margin-bottom: 16px;
+}
+
+.email-input:hover {
+	border: 1px solid #292830;
+	cursor: pointer;
+}
+
+.email-title {
+	font-family: 'roboto-bold';
+	font-size: 12px;
+	margin-bottom: 4px;
+}
+
+.text {
+	font-size: 15px;
 }
