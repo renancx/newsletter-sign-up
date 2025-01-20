@@ -122,6 +122,20 @@ html {
 }
 
 .error {
-	color: red;
+	color: #f48f7d;
 	margin: 0;
+}
+
+.input-error {
+	border: 1px solid #f48f7d;
+	background-color: #ffe8e6;
+	color: #f48f7d;
+}
+
+.input-error::placeholder {
+	color: #f48f7d;
+}
+
+.input-error:hover {
+	border: 1px solid #f48f7d;
 }

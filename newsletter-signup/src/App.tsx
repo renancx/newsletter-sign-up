@@ -8,18 +8,20 @@ import illustration from '../assets/images/illustration-sign-up-desktop.svg';
 function App() {
 	const [email, setEmail] = useState('');
 	const [visible, setVisible] = useState(false);
+	const [emailError, setEmailError] = useState(false);
 
 	const handleEmail = () => {
 		if (!email) {
-			alert('Please enter your email address');
+			setEmailError(true);
 			return;
 		}
 
 		if (!email.includes('@')) {
-			alert('Please enter a valid email address');
+			setEmailError(true);
 			return;
 		}
 
+		setEmailError(false);
 		setVisible(true);
 	}
 
@@ -40,10 +42,10 @@ function App() {
 					<div className="form">
 						<div className="email-container">
 							<label className="email-title" htmlFor="email">Email address</label>
-							<p className="email-title error">Valid email required</p>
+							{emailError && <p className="email-title error">Valid email required</p>}
 						</div>
 
-						<input placeholder="email@company.com" className="email-input" type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+						<input placeholder="email@company.com" className={`email-input ${emailError ? 'input-error' : ''}`} type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
 
 						<button className="btn" onClick={() => handleEmail()}>Subscribe to monthly newsletter</button>
 					</div>
